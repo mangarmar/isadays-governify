@@ -1,0 +1,23 @@
+<style>
+</style>
+
+<h2> Users: {{userCount}} </h2>
+<div ng-repeat="user in model" class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="{{user.avatar}}" alt="..." class = "card-img-top"> 
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{user.name}}</h5>
+
+          <ul class="list-group">
+            <li ng-repeat="repository in user.repositories" class="list-group-item d-flex justify-content-between align-items-center">
+              <a href="https://github.com/{{user.name}}/{{repository.name}}">{{repository.name}}</a>
+              <span class="badge bg-primary rounded-pill">{{repository.commits}}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
